@@ -12,7 +12,12 @@ Gyors megnyitás:
   ```sh
 git clone https://github.com/Sletteon/bongeszo && cd bongeszo
 cd build-untitled-Desktop-Release
-./untitled
+./mbrowser
+```
+Telepítés:
+```sh
+sudo chmod +x install.sh
+./install.sh
 ```
 <b>Telepítendő szoftverek:</b>
 

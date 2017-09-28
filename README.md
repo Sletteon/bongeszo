@@ -16,6 +16,7 @@ cd build-untitled-Desktop-Release
 ```
 Telepítés:
 ```sh
+git clone https://github.com/Sletteon/bongeszo && cd bongeszo
 sudo chmod +x install.sh
 ./install.sh
 ```

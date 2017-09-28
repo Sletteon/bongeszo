@@ -80,7 +80,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "mbrowser", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Go", 0));
     } // retranslateUi
 

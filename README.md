@@ -1,4 +1,4 @@
-# bongésző
+# böngésző
 Egy alapszintű böngésző.
 
 Automatikusan kiegészíti a weboldalak címét (pl.: google.hu -> https://google.hu)

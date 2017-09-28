@@ -19,6 +19,13 @@ Telepítés:
 sudo chmod +x install.sh
 ./install.sh
 ```
+Telepítés után az
+```sh
+mbrowser
+```
+parancscsal lehet bármikor elindítani a böngészőt.
+
+
 <b>Telepítendő szoftverek:</b>
 
   Debian/Ubuntu/Linux Mint:

@@ -13,7 +13,7 @@ Gyors megnyitás:
   ```sh
 sudo apt install libqt5webkit5-dev
 git clone https://github.com/Sletteon/bongeszo && cd bongeszo
-cd build-untitled-Desktop-Release
+cd build
 ./mbrowser
 ```
 Telepítés:

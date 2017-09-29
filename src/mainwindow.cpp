@@ -13,12 +13,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QShortcut *FocusEdit = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_D), this);
     QObject::connect(FocusEdit,    &QShortcut::activated, this, &MainWindow::FocusLineEdit);
 
-    //Alt+[balra] lenyomásakor hívja meg a MainWindow::Back függvényt
-    QShortcut *BackSC = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_Left), this);
+    //Alt+H lenyomásakor hívja meg a MainWindow::Back függvényt
+    QShortcut *BackSC = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_H), this);
     QObject::connect(BackSC,    &QShortcut::activated, this, &MainWindow::Back);
 
-    //Alt+[jobbra] lenyomásakor hívja meg a MainWindow::Forward függvényt
-    QShortcut *ForwardSC = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_Right), this);
+    //Alt+L lenyomásakor hívja meg a MainWindow::Forward függvényt
+    QShortcut *ForwardSC = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_L), this);
     QObject::connect(ForwardSC,    &QShortcut::activated, this, &MainWindow::Forward);
 }
 
@@ -38,14 +38,17 @@ void MainWindow::on_pushButton_clicked()
     if (!url.contains("."))
     {
         ui->webView->load("https://google.com/search?q="+url);
+        QTimer::singleShot(0, ui->webView, SLOT(setFocus()));
     } else
     {
         if (!url.contains("http://"))
         {
             ui->webView->load("https://"+url);
+            QTimer::singleShot(0, ui->webView, SLOT(setFocus()));
         }else
         {
              ui->webView->load(url);
+             QTimer::singleShot(0, ui->webView, SLOT(setFocus()));
         }
     }
 }
@@ -53,6 +56,7 @@ void MainWindow::on_pushButton_clicked()
 //ui->lineEdit fókuszolása
 void MainWindow::FocusLineEdit()
 {
+    ui->lineEdit->clear();
     QTimer::singleShot(0, ui->lineEdit, SLOT(setFocus()));
 }
 
@@ -65,4 +69,3 @@ void MainWindow::Forward()
 {
     ui->webView->forward();
 }
-

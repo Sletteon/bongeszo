@@ -22,6 +22,8 @@ private:
     Ui::MainWindow *ui;
 
     void FocusLineEdit();
+    void Back();
+    void Forward();
 };
 
 #endif // MAINWINDOW_H

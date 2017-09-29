@@ -8,10 +8,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //Alt+D = lineEdit fókuszolása (meghív egy FocusLineEdit függvényt
-    //a MainWindowban)
-    QShortcut *shortcut = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_D), this);
-    QObject::connect(shortcut,    &QShortcut::activated, this, &MainWindow::FocusLineEdit);
+
+    //Alt+D lenyomásakor hívja meg a MainWindow::FocusLineEdit függvényt
+    QShortcut *FocusEdit = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_D), this);
+    QObject::connect(FocusEdit,    &QShortcut::activated, this, &MainWindow::FocusLineEdit);
+
+    //Alt+[balra] lenyomásakor hívja meg a MainWindow::Back függvényt
+    QShortcut *BackSC = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_Left), this);
+    QObject::connect(BackSC,    &QShortcut::activated, this, &MainWindow::Back);
+
+    //Alt+[jobbra] lenyomásakor hívja meg a MainWindow::Forward függvényt
+    QShortcut *ForwardSC = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_Right), this);
+    QObject::connect(ForwardSC,    &QShortcut::activated, this, &MainWindow::Forward);
 }
 
 MainWindow::~MainWindow()
@@ -42,9 +50,19 @@ void MainWindow::on_pushButton_clicked()
     }
 }
 
-//Alt+D = lineEdit fókuszolása
-
+//ui->lineEdit fókuszolása
 void MainWindow::FocusLineEdit()
 {
     QTimer::singleShot(0, ui->lineEdit, SLOT(setFocus()));
 }
+
+void MainWindow::Back()
+{
+    ui->webView->back();
+}
+
+void MainWindow::Forward()
+{
+    ui->webView->forward();
+}
+

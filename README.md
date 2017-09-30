@@ -1,5 +1,6 @@
 # böngésző
-Egy alapszintű böngésző.
+Egy alapszintű böngésző, ami a qtwebkiten alapszik.
+
 <i>Linuxra már elkészült egy build, Windows operációs rendszeren is használható ha a qtwebkit csomag telepítése sikeres.</i>
 
 Automatikusan kiegészíti a weboldalak címét (pl.: google.hu -> https://google.hu)
@@ -16,7 +17,9 @@ git clone https://github.com/Sletteon/bongeszo && cd bongeszo
 cd build
 ./mbrowser
 ```
-Telepítés:
+<b>Debian/Ubuntu/Linux Mint</b>
+<i>Install.sh Debian alapú rendszerekre lett írva (apt), de ha először a libqt5webkit5-dev csomagot telepítjük a disztribúció csomagkezelőjével, akkor is működni fog a szkript.<i>
+Telepítés: 
 ```sh
 git clone https://github.com/Sletteon/bongeszo && cd bongeszo
 sudo chmod +x install.sh
@@ -29,5 +32,5 @@ mbrowser
 parancscsal lehet bármikor elindítani a böngészőt.
 
 
-<b>Telepítendő szoftverek:</b>
+<b>Telepítendő csomagok:</b><i>Install.sh-ban automatikusan telepíti</i>
 libqt5webkit5-dev

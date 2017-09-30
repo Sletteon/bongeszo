@@ -6,7 +6,11 @@ Egy alapszintű böngésző, ami a qtwebkiten alapszik.
 Automatikusan kiegészíti a weboldalak címét (pl.: google.hu -> https://google.hu)
 Ha nincs a keresett szövegben pont, akkor a keresett szöveget megnyitja google keresés formájában.
 Alt + D kombinációval a szövegdobozra fókuszál.
-Alt + balra megnyomásával visszalép az előző meglátogatott oldalra, valamint az Alt + jobbrával továbbmegyünk
+Alt + H megnyomásával visszalép az előző meglátogatott oldalra, valamint az Alt + L-el továbbmegyünk
+Azt tervezem, hogy a J billentyűvel lefele, a K-val meg fölfele lehessen görgetni a vim parancsokhoz hasonlóan.
+A linkek megnyitása majd az F gombbal lesz lehetséges, hogy ne kelljen mindig a billentyűzet, és az egér között váltani.
+Ezt az ötletet a qtbrowsertől, és a vimium chrome-plugintól loptam.
+
 
 <i>Megjegyzés: Mivel a projektet teszt céljából kezdtem, így pl. a projektfájlnak untitled a neve.<i>
 

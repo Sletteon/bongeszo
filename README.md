@@ -13,13 +13,13 @@ Alt + balra megnyomásával visszalép az előző meglátogatott oldalra, valami
 Gyors megnyitás:
   ```sh
 sudo apt install libqt5webkit5-dev
-git clone https://github.com/Sletteon/bongeszo && cd bongeszo
-cd build
+git clone https://github.com/Sletteon/bongeszo && cd bongeszo/build
 ./mbrowser
 ```
 <b>Debian/Ubuntu/Linux Mint</b>
-<i>Install.sh Debian alapú rendszerekre lett írva (apt), de ha először a libqt5webkit5-dev csomagot telepítjük a disztribúció csomagkezelőjével, akkor is működni fog a szkript.<i>
-Telepítés: 
+
+<i>Install.sh Debian alapú rendszerekre lett írva (apt), de ha először a libqt5webkit5-dev csomagot telepítjük a disztribúció csomagkezelőjével, akkor is működni fog a szkript.</i>
+<b>Telepítés</b>: 
 ```sh
 git clone https://github.com/Sletteon/bongeszo && cd bongeszo
 sudo chmod +x install.sh
@@ -32,5 +32,6 @@ mbrowser
 parancscsal lehet bármikor elindítani a böngészőt.
 
 
-<b>Telepítendő csomagok:</b><i>Install.sh-ban automatikusan telepíti</i>
+<b>Telepítendő csomagok:</b>
+<i>Install.sh-ban automatikusan telepíti</i>
 libqt5webkit5-dev

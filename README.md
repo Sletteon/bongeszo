@@ -1,4 +1,4 @@
-# böngésző
+# mbrowser
 Ez egy alapszintű böngésző, amelyet a qtwebkit használatával fejlesztettem.
 Megoldást kerestem a billentyűzet és az egér közötti gyakori váltás kiküszöbölésére. 
 
@@ -29,7 +29,7 @@ git clone https://github.com/Sletteon/bongeszo && cd bongeszo/build
 ./mbrowser
 ```
 <i>Install.sh is Debian alapú rendszerekre lett írva (apt), de ha először a libqt5webkit5-dev csomagot telepítjük a disztribúció csomagkezelőjével, akkor is működni fog a szkript.</i>
-<b>Telepítés</b>: 
+Telepítés: 
 ```sh
 git clone https://github.com/Sletteon/bongeszo && cd bongeszo
 sudo chmod +x install.sh

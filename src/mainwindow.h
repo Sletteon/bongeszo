@@ -24,6 +24,10 @@ private:
     void FocusLineEdit();
     void Back();
     void Forward();
+    void ScrollDown();
+    void ScrollUp();
+    void ScrollLeft();
+    void ScrollRight();
 };
 
 #endif // MAINWINDOW_H

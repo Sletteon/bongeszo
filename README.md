@@ -7,8 +7,8 @@ Automatikusan kiegészíti a weboldalak címét (pl.: google.hu -> https://googl
 Ha nincs a keresett szövegben pont, akkor a keresett szöveget megnyitja google keresés formájában.
 Alt + D kombinációval a szövegdobozra fókuszál.
 Alt + H megnyomásával visszalép az előző meglátogatott oldalra, valamint az Alt + L-el továbbmegyünk
-Azt tervezem, hogy a J billentyűvel lefele, a K-val meg fölfele lehessen görgetni a vim parancsokhoz hasonlóan.
-A linkek megnyitása majd az F gombbal lesz lehetséges, hogy ne kelljen mindig a billentyűzet, és az egér között váltani.
+A J billentyűvel lefele, a K-val meg fölfele is lehet görgetni, vízszintes görgetés a H, és az L gombbal történik.
+A linkek megnyitása majd az F-fel lesz lehetséges, hogy ne kelljen mindig a billentyűzet, és az egér között váltani.
 Ezt az ötletet a qtbrowsertől, és a vimium chrome-plugintól loptam.
 
 

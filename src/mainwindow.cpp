@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include <QShortcut>
 #include <QTimer>
+#include "QWebFrame"
+#include <Qt>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,6 +22,21 @@ MainWindow::MainWindow(QWidget *parent) :
     //Alt+L lenyomásakor hívja meg a MainWindow::Forward függvényt
     QShortcut *ForwardSC = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_L), this);
     QObject::connect(ForwardSC,    &QShortcut::activated, this, &MainWindow::Forward);
+
+    // scrollDSC = scrollDownShortCut
+    QShortcut *scrollDSC = new QShortcut(QKeySequence(Qt::Key_J), this);
+    QObject::connect(scrollDSC,    &QShortcut::activated, this, &MainWindow::ScrollDown);
+
+    QShortcut *scrollUSC = new QShortcut(QKeySequence(Qt::Key_K), this);
+    QObject::connect(scrollUSC,    &QShortcut::activated, this, &MainWindow::ScrollUp);
+
+
+    QShortcut *scrollLSC = new QShortcut(QKeySequence(Qt::Key_H), this);
+    QObject::connect(scrollLSC,    &QShortcut::activated, this, &MainWindow::ScrollLeft);
+
+
+    QShortcut *scrollRSC = new QShortcut(QKeySequence(Qt::Key_L), this);
+    QObject::connect(scrollRSC,    &QShortcut::activated, this, &MainWindow::ScrollRight);
 }
 
 MainWindow::~MainWindow()
@@ -69,3 +86,29 @@ void MainWindow::Forward()
 {
     ui->webView->forward();
 }
+
+// töltse be integerbe a jelenlegi görgetési pozíciót, és adjon hozzá 40-et (px)
+void MainWindow::ScrollDown()
+{
+    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Vertical);
+    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Vertical, currentScrollValue +40);
+}
+
+void MainWindow::ScrollUp()
+{
+    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Vertical);
+    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Vertical, currentScrollValue -40);
+}
+
+void MainWindow::ScrollLeft()
+{
+    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Horizontal);
+    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Horizontal, currentScrollValue -40);
+}
+
+void MainWindow::ScrollRight()
+{
+    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Horizontal);
+    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Horizontal, currentScrollValue +40);
+}
+

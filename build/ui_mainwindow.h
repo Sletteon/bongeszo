@@ -70,7 +70,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "mbrowser", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Go", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Ugorj a linkre", 0));
     } // retranslateUi
 
 };

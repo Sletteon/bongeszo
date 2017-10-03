@@ -9,7 +9,7 @@ Megoldást kerestem a billentyűzet és az egér közötti gyakori váltás kik�
 <p>Alt + D kombinációval a szövegdobozra fókuszál.</p>
 <p>Alt + H megnyomásával visszalép az előző meglátogatott oldalra, valamint az Alt + L-el továbbmegyünk.</p>
 <p>A J billentyűvel lefele, a K-val meg fölfele lehet görgetni, vízszintes görgetés a H és az L gombbal történik.</p>
-<p>A linkek megnyitása majd az F-el lesz lehetséges.(https://youtu.be/eEr7ruKP7y8)</p>
+<p>A linkek megnyitása majd az F-el lesz lehetséges.</p>
 <p>Választásom azért esett ezekre a betűkre, mert a jobb kezünk itt pihen (tízujjas vakon gépelés).</p>
 <p>A Vim szövegszerkesztő mutatta meg számomra ezt a lehetőséget.</p>
 <p>Az ötletet a qutebrowsertől és a vimium chrome-plugintól merítettem.</p>

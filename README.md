@@ -20,7 +20,7 @@ Nehézséget okoztak a billentyűparancsok (pl.: a görgetés megoldása), a fel
 
 <i>Megjegyzés: Mivel a projektet teszt céljából kezdtem, így pl. a projektfájlnak untitled a neve.<i>
   
-<b>Az alábbi utasítások Debian/Ubunu/Mint disztribúciókra alkalmazhatók.</b>
+<b>Az alábbi utasítások Debian/Ubuntu/Mint disztribúciókra alkalmazhatók.</b>
 
 Gyors megnyitás:
   ```sh

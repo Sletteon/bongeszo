@@ -10,6 +10,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    /*
+     * TODO:
+    (mainwindow.h-ba)
+    void PairShortcutsWithFunctions (std::string func, QKeySequence());
+        mainwindow.cpp:
+    void PairShortcutsWithFunctions (std::string func, QKeySequence()){
+        QShortcut *ShortcutName = new QShortcut(QKeySequence(), this);
+        QObject::connect(ShortcutName, &QShortcut::activated, this, func);
+    }
+    //HIBA: 'operator()' is not a member of 'std::__cxx11::basic_string<char>'
+
+*/
 
     //Alt+D lenyomásakor hívja meg a MainWindow::FocusLineEdit függvényt
     QShortcut *FocusEdit = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_D), this);
@@ -37,6 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QShortcut *scrollRSC = new QShortcut(QKeySequence(Qt::Key_L), this);
     QObject::connect(scrollRSC,    &QShortcut::activated, this, &MainWindow::ScrollRight);
+
 }
 
 MainWindow::~MainWindow()
@@ -86,29 +99,34 @@ void MainWindow::Forward()
 {
     ui->webView->forward();
 }
-
 // töltse be integerbe a jelenlegi görgetési pozíciót, és adjon hozzá 40-et (px)
+void MainWindow::ScrollDownOrRight(Qt::Orientation orientation, int value){
+    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(orientation);
+    ui->webView->page()->mainFrame()->setScrollBarValue(orientation, currentScrollValue  + value);
+}
+// töltse be integerbe a jelenlegi görgetési pozíciót, és vonjon ki belőle 40-et (px)
+void MainWindow::ScrollUpOrLeft(Qt::Orientation orientation, int value){
+    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(orientation);
+    ui->webView->page()->mainFrame()->setScrollBarValue(orientation, currentScrollValue  - value);
+}
+
 void MainWindow::ScrollDown()
 {
-    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Vertical);
-    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Vertical, currentScrollValue +40);
+    ScrollDownOrRight(Qt::Vertical, 40);
 }
 
 void MainWindow::ScrollUp()
 {
-    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Vertical);
-    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Vertical, currentScrollValue -40);
+    ScrollUpOrLeft(Qt::Vertical, 40);
 }
 
 void MainWindow::ScrollLeft()
 {
-    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Horizontal);
-    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Horizontal, currentScrollValue -40);
+    ScrollUpOrLeft(Qt::Horizontal, 40);
 }
 
 void MainWindow::ScrollRight()
 {
-    int currentScrollValue = ui->webView->page()->mainFrame()->scrollBarValue(Qt::Horizontal);
-    ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Horizontal, currentScrollValue +40);
+    ScrollDownOrRight(Qt::Horizontal, 40);
 }
 

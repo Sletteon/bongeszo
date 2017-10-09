@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
+#include <QShortcut>
+#include <QString>
+
 
 namespace Ui {
 class MainWindow;
@@ -28,6 +32,11 @@ private:
     void ScrollUp();
     void ScrollLeft();
     void ScrollRight();
+
+void ScrollDownOrRight(Qt::Orientation orientation, int value);
+
+void ScrollUpOrLeft(Qt::Orientation orientation, int value);
+
 };
 
 #endif // MAINWINDOW_H
